@@ -9,6 +9,7 @@ soup = BeautifulSoup(source,'lxml')
 first_names = soup.find_all('span', class_ = 'hide-for-tablet')
 last_names = soup.find_all('span',class_ = 'hide-for-mobile')
 teams = soup.find_all('a',class_ = "grey semi-bold uppercase ArchiveLink")
+points = soup.find_all('td', class_ = "dark bold")
 
 for i in range(len(first_names)):
-    print("{} {} {}".format(first_names[i].string,last_names[i].string,teams[i].string))
+    print("{} {} {} {}".format(first_names[i].string,last_names[i].string,teams[i].string,points[i].string))
