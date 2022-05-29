@@ -8,7 +8,7 @@ soup = BeautifulSoup(source,'lxml')
 #Extracted data
 first_names = soup.find_all('span', class_ = 'hide-for-tablet')
 last_names = soup.find_all('span',class_ = 'hide-for-mobile')
-#teams = soup.find_all('a',class_ = "grey semi-bold uppercase ArchiveLink")
+teams = soup.find_all('a',class_ = "grey semi-bold uppercase ArchiveLink")
 
 for i in range(len(first_names)):
-    print("{} {}".format(first_names[i].string,last_names[i].string))
+    print("{} {} {}".format(first_names[i].string,last_names[i].string,teams[i].string))
